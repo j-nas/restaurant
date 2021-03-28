@@ -1,0 +1,32 @@
+#content {
+  background-image: url("./img/background.jpeg");
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 150px 75px minmax(auto, 500px);
+  grid-template-areas: 
+    ". title ."
+    "tab1 tab2 tab3"
+    "content content content";
+}
+.title {
+  grid-area: title;
+  
+}
+.tabAbout {
+  grid-area: tab1;
+}
+.tabMenu {
+  grid-area: tab2;
+}
+.tabContact {
+  grid-area: tab3;
+}
+
+.tabContent {
+  grid-area: content;
+}
+
+.bottomBar {
+  position: fixed;
+}
+
