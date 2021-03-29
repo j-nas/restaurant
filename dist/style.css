@@ -1,32 +1,94 @@
-#content {
-  background-image: url("./img/background.jpeg");
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 150px 75px minmax(auto, 500px);
-  grid-template-areas: 
-    ". title ."
-    "tab1 tab2 tab3"
-    "content content content";
+body {
+  background-color: #a98274;
+  margin: 0;
 }
-.title {
-  grid-area: title;
+#content {
+  display: grid;
+  grid-template-rows: 1.5rem 1fr;
+  font-size: 20pt;
+}
+.navbar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  place-content: left, center;
+  /* background-color: grey; */
+  height: 1.5rem;
+  margin: 0;
+  z-index: 10;
   
 }
-.tabAbout {
-  grid-area: tab1;
-}
-.tabMenu {
-  grid-area: tab2;
-}
-.tabContact {
-  grid-area: tab3;
-}
+.tab {
+  font-size: 20pt;
+  background-color: teal;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  border-style: solid;
 
-.tabContent {
-  grid-area: content;
+  
 }
+.tab:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.main {
+  width: 100%;
+}
+.selected {
+  border-style: none;
+  background-color: #a98274;
+}
+.selected:hover {
+  background-color: #a98274;
+  color: black;
+
+}
+  
+
+
 
 .bottomBar {
   position: fixed;
+  background-color: black;
+  color: white;
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  height: 1.5rem;
+  overflow: hidden;
+  font-size: 10pt;
+  text-align: right;
 }
 
+.hero-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/background.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 350px;
+  top: 10px;
+}
+#resos {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/reservations.jpg");
+  height: 300px;
+}
+.hero-text {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: 'BioRhyme Expanded', serif;
+  
+}
+#map {
+  display: block;
+
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
