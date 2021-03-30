@@ -1,5 +1,5 @@
 body {
-  background-color: #a98274;
+  background-color: #fddacd;
   margin: 0;
 }
 #content {
@@ -10,21 +10,23 @@ body {
 .navbar {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 120px);
+  grid-template-columns: repeat(3, 140px);
   place-content: left, center;
   /* background-color: grey; */
   height: 1.5rem;
   margin: 0;
   z-index: 10;
   
+  
 }
 .tab {
   font-size: 20pt;
-  background-color: teal;
+  background-color: white;
   width: 100%;
-  margin: auto;
+  margin: 0;
   text-align: center;
   border-style: solid;
+  padding-left: 0px;
 
   
 }
@@ -37,8 +39,10 @@ body {
   width: 100%;
 }
 .selected {
-  border-style: none;
+  border-style: solid;
   background-color: #a98274;
+  margin: 0;
+  border-bottom-style: none;
 }
 .selected:hover {
   background-color: #a98274;
@@ -50,30 +54,49 @@ body {
 
 
 .bottomBar {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: left;
+
   position: fixed;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.912);
   color: white;
-  position: fixed;
   bottom: 0%;
   width: 100%;
-  height: 1.5rem;
+  height: 20px;
   overflow: hidden;
   font-size: 10pt;
   text-align: right;
+  z-index: 100;
+  padding-top: 2px;
+  font-size: 8pt;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+.ghlogo {
+  display: flex-box;
+
 }
 
+@media only screen and (max-width: 600px) {
+  .hero-img {
+    height: 350px;
+  }
+}
 .hero-img {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/background.jpeg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
-  height: 350px;
-  top: 10px;
-}
-#resos {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/reservations.jpg");
-  height: 300px;
+  background-size: cover;
+  height: 500px;
+  top: 0px;
 }
 .hero-text {
   text-align: center;
@@ -84,11 +107,111 @@ body {
   color: white;
   font-family: 'BioRhyme Expanded', serif;
   
+  
 }
 #map {
-  display: block;
-
+  
+  padding-bottom: 10%;
   margin-right: auto;
   margin-left: auto;
   position: relative;
+}
+
+#contactContent {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  " hero hero "
+  " blurb info ";
+  justify-items: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 900px) {
+  #contactContent {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      " hero "
+      " info "
+      " blurb ";
+  }
+}
+@media only screen and (max-width: 400px) {
+  .tab {
+    width: 100%;
+    font-size: 18pt;
+  }
+    .navbar {
+    grid-template-columns: repeat(3, 108px);
+  }
+}
+@media only screen and (max-width: 600px) {
+  #cardCont {
+    grid-template-columns: 1fr;
+  }
+}
+
+#resos {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/reservations.jpg");
+  height: 300px;
+  grid-area: hero;
+  top: 30px;
+}
+#blurb {
+  grid-area: blurb;
+  text-align: top;
+  align-self: stretch;
+}
+#contactMap {
+  grid-area: info;
+  text-align: center;
+}
+#cardCont {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0;
+  align-self: center;
+  align-content: center;
+}
+.card {
+  height: 400px;
+  width: 300px;
+  display: grid;
+  grid-template-rows: 200px 30px 150px 20px;
+  /* grid-template-columns: 1fr; */
+  /* gap: 1rem; */
+  background-color: white;
+  margin: 1em;
+  padding: 3px;
+  box-shadow: 5px 5px whitesmoke;
+  border-radius: 10px;
+
+}
+/* #cardPhoto {
+  width: 300px;
+  height: 200px;
+  max-width: 100%;
+  height: auto;
+} */
+.cardDesc {
+  margin: .5rem;
+  font-size: 16pt;
+}
+img {
+  max-width: 100%;
+  max-height: auto;
+  object-fit: contain;
+}
+.cardDesc {
+  background-color: silver;
+  padding: 1em;
+  border-radius: .75em;
+}
+.price {
+  text-align: right;
+}
+.cardTitle {
+  font-family: fantasy;
+  font-size: 20pt;
 }
